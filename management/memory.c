@@ -26,3 +26,12 @@ void mem_print(const unsigned char *buf, size_t size){
 void mem_destroy(unsigned char *buf){
     free(buf); // gives the byts back
 }
+
+int mem_set(unsigned char *buf, size_t size, size_t index, unsigned char value){
+    if (index >= size) {
+        printf("Index %zu is out of range (size is %zu)\n", index, size);
+        return 0;
+    }
+    buf[index] = value;
+    return 1;
+}
